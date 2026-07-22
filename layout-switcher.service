@@ -1,0 +1,13 @@
+[Unit]
+Description=Wayland layout switcher daemon
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/layout-switcher
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+
+[Install]
+WantedBy=graphical-session.target
